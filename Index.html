@@ -3,171 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhakthi Heritage Art Calendar 2026</title>
+    <title>Bhakthi Heritage 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --antique-gold: #d4af37;
-            --deep-charcoal: #1a1a1a;
+            --deep-charcoal: #121212;
             --sepia-bg: #fdf5e6;
             --accent-brown: #4e342e;
         }
 
         * { box-sizing: border-box; scroll-behavior: smooth; }
-        body, html { margin: 0; padding: 0; width: 100%; background: var(--sepia-bg); color: var(--accent-brown); font-family: 'Lora', serif; }
-
-        /* --- INNOVATIVE BRANDING SEAL --- */
-        .project-seal {
-            position: fixed; top: 20px; left: 20px; z-index: 1000;
-            width: 80px; height: 80px; border: 2px solid var(--antique-gold);
-            border-radius: 50%; background: white; display: flex; align-items: center;
-            justify-content: center; text-align: center; font-family: 'Cinzel';
-            font-size: 8px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        /* --- GLOBAL ART BANNER --- */
-        .art-banner {
-            background: #fff9ed; padding: 35px 0; text-align: center;
-            border-top: 5px solid var(--antique-gold); border-bottom: 5px solid var(--antique-gold);
-            letter-spacing: 5px; font-family: 'Cinzel', serif; color: var(--accent-brown);
-            font-size: 1.1rem; text-transform: uppercase; position: sticky; top: 0; z-index: 100;
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            background: var(--deep-charcoal); color: var(--accent-brown); 
+            font-family: 'Lora', serif; overflow-x: hidden;
         }
 
         /* --- THEME WRAPPERS --- */
-        .page-container { min-height: 100vh; display: none; position: relative; background-size: cover; background-position: center; background-attachment: fixed; }
+        .page-container { min-height: 100vh; display: none; background: var(--sepia-bg); position: relative; }
         .page-container.active { display: block; animation: pageFade 1.2s ease-in-out; }
-        .bg-overlay { position: absolute; inset: 0; background: rgba(253, 245, 230, 0.9); z-index: 1; }
 
-        @keyframes pageFade { from { opacity: 0; transform: scale(1.02); } to { opacity: 1; transform: scale(1); } }
+        @keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
 
-        /* --- ARTICLE FLOW ELEMENTS --- */
-        header { text-align: center; padding: 60px 20px; position: relative; z-index: 2; }
-        h1 { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 8vw, 4rem); margin: 0; }
+        /* --- GLOBAL ELEMENTS --- */
+        header { 
+            text-align: center; padding: 80px 20px; 
+            background: linear-gradient(to bottom, rgba(212, 175, 55, 0.15), transparent);
+            border-bottom: 1px solid var(--antique-gold);
+        }
+        h1 { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 7vw, 3.8rem); margin: 0; color: var(--accent-brown); }
+        .subtitle { font-style: italic; color: var(--antique-gold); letter-spacing: 3px; font-weight: bold; margin-top: 10px; }
+
+        .content-box { 
+            max-width: 850px; margin: -40px auto 80px; background: white; 
+            padding: 50px 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); border-radius: 4px;
+        }
+        .hero-img { 
+            width: 280px; height: 280px; border-radius: 50%; border: 6px solid var(--antique-gold);
+            margin: 0 auto 40px; display: block; object-fit: cover; 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        /* --- NAVIGATION / SCAN PROGRESS --- */
+        .navigation-block {
+            background: var(--accent-brown); color: var(--sepia-bg);
+            padding: 60px 20px; text-align: center; border-top: 6px solid var(--antique-gold);
+        }
+        .instruction-text { max-width: 600px; margin: 0 auto 30px; line-height: 1.8; font-style: italic; }
         
-        .article-content { max-width: 900px; margin: 0 auto; padding: 0 20px 80px; position: relative; z-index: 2; }
-        .article-section { margin-bottom: 40px; line-height: 1.8; font-size: 1.1rem; }
-        .article-section h3 { font-family: 'Cinzel'; color: var(--antique-gold); border-left: 4px solid var(--antique-gold); padding-left: 15px; }
+        .scan-trigger {
+            display: inline-flex; align-items: center; gap: 15px;
+            background: var(--antique-gold); color: var(--deep-charcoal);
+            padding: 18px 45px; text-decoration: none; font-family: 'Cinzel', serif;
+            font-weight: bold; border-radius: 50px; cursor: pointer;
+            transition: 0.4s; border: none; font-size: 1rem;
+        }
+        .scan-trigger:hover { background: white; transform: translateY(-3px); }
 
-        .hero-img { width: 100%; max-width: 500px; border: 6px solid white; outline: 1px solid var(--antique-gold); margin: 30px auto; display: block; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-
-        /* --- VIDEO WRAPPING --- */
-        .video-box { margin: 30px 0; border: 1px solid var(--antique-gold); padding: 10px; background: white; }
-        .iframe-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-        .iframe-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-
-        /* --- NAVIGATION --- */
-        .navigation-block { background: var(--accent-brown); color: var(--sepia-bg); padding: 80px 20px; text-align: center; border-top: 8px solid var(--antique-gold); position: relative; z-index: 2; }
-        .nav-btn { background: var(--antique-gold); color: var(--deep-charcoal); padding: 20px 50px; font-family: 'Cinzel', serif; font-weight: bold; text-decoration: none; border-radius: 50px; border: none; cursor: pointer; display: inline-block; margin-top: 30px; transition: 0.3s; }
-        .nav-btn:hover { background: white; color: var(--accent-brown); }
-
-        /* --- SYMBOLIC BACKGROUNDS --- */
-        #feb { background-image: url('https://www.shutterstock.com/image-photo/vintage-paper-background-ramayana-concept-260nw-2158864757.jpg'); }
-        #mar { background-image: url('https://shaktimandir.org/wp-content/uploads/2021/04/tulsi-plant.jpg'); }
-        /* ... Other Backgrounds as mapped previously ... */
-
-        footer { padding: 60px; text-align: center; font-size: 0.85rem; background: var(--deep-charcoal); color: #888; border-top: 2px solid var(--antique-gold); position: relative; z-index: 2; }
+        footer { padding: 40px; text-align: center; font-size: 0.85rem; background: var(--deep-charcoal); color: #777; letter-spacing: 1px; }
+        footer b { color: var(--antique-gold); }
     </style>
 </head>
 <body>
 
-    <div class="project-seal">BHAKTHI<br>HERITAGE<br>2026</div>
-
     <div id="experience-wrapper">
-        
-        <div id="intro" class="page-container">
-            <div class="bg-overlay"></div>
-            <div class="art-banner">Bhakthi Heritage Art Calendar 2026</div>
-            <header>
-                <div style="font-family: 'Cinzel'; letter-spacing: 5px; color: var(--antique-gold);">ART CALENDAR 2026</div>
-                <h1 style="font-size: clamp(3rem, 12vw, 6rem); line-height: 1; margin: 20px 0;">BHAKTHI</h1>
-                <p style="font-style: italic; font-size: 1.4rem; color: var(--accent-brown); font-weight: bold;">EXPERIENCING PUREST FORM OF LOVE!</p>
-            </header>
-            <div class="article-content" style="text-align: center;">
-                <p class="article-section">Welcome to a year-long sacred journey. This digital companion unlocks the stories, songs, and deep wisdom behind each month's artwork.</p>
-                <button onclick="navigate('jan')" class="nav-btn">BEGIN THE JOURNEY</button>
-                <div style="margin-top: 60px; font-size: 0.9rem; line-height: 1.8;">
-                    Illustrations & Design: <b>Sweta Sairam</b><br>
-                    Content & Playlists: <b>Sai Mallesh</b><br>
-                    Follow: <b>@swetcha_art</b>
-                </div>
-            </div>
-        </div>
-
         <div id="jan" class="page-container">
-            <div class="bg-overlay"></div>
-            <div class="art-banner">Bhakthi Heritage Art Calendar 2026</div>
-            <header><h1>January</h1><div style="font-style: italic; color: var(--antique-gold);">What is Bhakthi?</div></header>
-            <div class="article-content">
-                <img src="https://static.sadhguru.org/d/46272/1626099405-bhakti-path.jpg" class="hero-img">
-                
-                <div class="article-section">
-                    <p>Bhakti is the nectar of devotion—a state where the seeker dissolves into the infinite love of the Divine. It is the shortest and sweetest path to self-realization, where every breath becomes a prayer.</p>
-                </div>
-
-                <div class="article-section">
-                    <h3>The Inner Stripping</h3>
-                    <p>Devotion begins with the removal of masks. The song <b>Jhoot Chor</b> represents this stripping away of the ego's falsehoods to reach the core of the heart.</p>
-                    <div class="video-box"><div class="iframe-wrap"><iframe src="https://www.youtube.com/embed/n4p8E_5xHLo"></iframe></div></div>
-                </div>
-
-                <div class="article-section">
-                    <h3>The Sweetest Path</h3>
-                    <p>In this discourse, <b>Madhusudan Sai</b> explains why Bhakti is the most accessible spiritual path, transforming human emotion into divine energy.</p>
-                    <div class="video-box"><div class="iframe-wrap"><iframe src="https://www.youtube.com/embed/fD_t7-SPlA8"></iframe></div></div>
-                </div>
-
-                <div class="article-section">
-                    <h3>Connection & Kirtan</h3>
-                    <p>Bhakti is both a private connection and a communal celebration. Experience the power of the soul's link to its Source and the vibrancy of collective chanting.</p>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <div class="video-box"><div class="iframe-wrap"><iframe src="https://www.youtube.com/embed/zO99U-h8q_k"></iframe></div></div>
-                        <div class="video-box"><div class="iframe-wrap"><iframe src="https://www.youtube.com/embed/W9l6vN4O3rM"></iframe></div></div>
-                    </div>
-                </div>
+            <header><h1>January</h1><div class="subtitle">What is Bhakthi?</div></header>
+            <div class="content-box">
+                <img src="https://images.unsplash.com/photo-1545063914-a1a6ec821c88?auto=format&fit=crop&w=500" class="hero-img">
+                <p>Bhakti is the nectar of the soul—a total surrender to the Divine through love and devotion. This month, we explore the seed that starts the journey.</p>
             </div>
-            <div class="navigation-block"><button onclick="triggerScanner('February')" class="nav-btn">📷 SCAN TO PROGRESS</button></div>
+            <div class="navigation-block">
+                <div class="instruction-text">Journey deeper. Look at the sacred art for <b>February</b> on your calendar. When you are ready to hear the story of Sant Tulsidas, scan his artwork.</div>
+                <button onclick="triggerScanner('February')" class="scan-trigger">📷 SCAN TO PROGRESS</button>
+            </div>
         </div>
 
         <div id="feb" class="page-container">
-            <div class="bg-overlay"></div>
-            <div class="art-banner">Bhakthi Heritage Art Calendar 2026</div>
-            <header><h1>February</h1><div style="font-style: italic; color: var(--antique-gold);">Sant Tulsidas</div></header>
-            <div class="article-content">
+            <header><h1>February</h1><div class="subtitle">Sant Tulsidas</div></header>
+            <div class="content-box">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU6os3H0y_x_WXAWiI4-cpIemsFXqYceZ5Rg&s" class="hero-img">
-                <div class="article-section">
-                    <p>Tulsidas Ji's life was a testament to the power of total surrender. His <i>Ramcharitmanas</i> brought the divine story of Rama into the vernacular, making the Supreme accessible to all.</p>
-                    <div class="video-box"><div class="iframe-wrap"><iframe src="https://www.youtube.com/embed/4-BzjHYhc-M"></iframe></div></div>
-                </div>
+                <p>The composer of the Ramcharitmanas, Tulsidas Ji showed us that devotion to Sri Rama is the ultimate path to peace in this age.</p>
             </div>
-            <div class="navigation-block"><button onclick="triggerScanner('March')" class="nav-btn">📷 SCAN TO PROGRESS</button></div>
+            <div class="navigation-block">
+                <div class="instruction-text">Turn to the divine poetry of <b>March</b>. Scan the artwork of Andalamma to unlock her grace.</div>
+                <button onclick="triggerScanner('March')" class="scan-trigger">📷 SCAN TO PROGRESS</button>
+            </div>
         </div>
 
+        <div id="mar" class="page-container">
+            <header><h1>March</h1><div class="subtitle">Andalamma</div></header>
+            <div class="content-box">
+                <img src="https://tirumalatirupatiyatra.in/wp-content/uploads/2024/03/Andal-or-Goda-Devi-Dressed-up-as-Child-1.jpg" class="hero-img">
+                <p>Goda Devi, the earth-born goddess, who bound the Lord with her garland of verses.</p>
+            </div>
+            <div class="navigation-block">
+                <button onclick="triggerScanner('April')" class="scan-trigger">📷 SCAN TO PROGRESS</button>
+            </div>
         </div>
 
-    <footer>
-        <p>Bhakthi Heritage Art Calendar Project 2026</p>
-        <p>A collaborative tribute by <b>@swetcha_art</b> & <b>Sai_prema_photography</b></p>
-    </footer>
+        <div id="dec" class="page-container">
+            <header><h1>December</h1><div class="subtitle">Yourself</div></header>
+            <div class="content-box" style="text-align: center;">
+                <h2 style="font-family: 'Cinzel';">The Reflection</h2>
+                <p>After following the footsteps of the saints, look within. The same Bhakti lives in you.</p>
+            </div>
+            <footer>
+                <p>Bhakthi Heritage Calendar Project 2026</p>
+                <p>Follow: <b>@swetch_art</b> & <b>Sai_prema_photography</b></p>
+            </footer>
+        </div>
+    </div>
 
     <script>
-        function navigate(id) {
-            document.querySelectorAll('.page-container').forEach(p => p.classList.remove('active'));
-            const target = document.getElementById(id);
-            if(target) {
+        // Core Logic: Identification by URL
+        function checkUnlock() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const month = urlParams.get('month');
+
+            // If no month is specified, January is open by default
+            const targetId = month || 'jan';
+            const target = document.getElementById(targetId);
+            
+            if (target) {
+                // Hide all sections first
+                document.querySelectorAll('.page-container').forEach(p => p.classList.remove('active'));
+                // Show target
                 target.classList.add('active');
                 window.scrollTo(0,0);
             }
         }
 
+        // Camera Progression Logic
         function triggerScanner(monthName) {
-            alert(`Ready to unlock ${monthName}?\n\n1. Look at your physical calendar.\n2. Open your camera app and scan the artwork's QR code.\n3. The journey continues!`);
+            alert(`Ready to unlock ${monthName}?\n\n1. Use your phone's native Camera app.\n2. Point it at the ${monthName} QR code on your calendar.\n3. Tap the link that appears!`);
         }
 
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const month = urlParams.get('month');
-            navigate(month || 'intro');
-        };
+        window.onload = checkUnlock;
     </script>
 </body>
 </html>
